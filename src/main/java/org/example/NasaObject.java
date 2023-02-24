@@ -2,16 +2,8 @@ package org.example;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class NasaObject {
-
-    private final String copyright;
-    private final String date;
-    private final String explanation;
-    private final String HDUrl;
-    private final String mediaType;
-    private final String serviceVersion;
-    private final String title;
-    private final String url;
+public record NasaObject(String copyright, String date, String explanation, String HDUrl, String mediaType,
+                         String serviceVersion, String title, String url) {
 
     public NasaObject(
             @JsonProperty("copyright") String copyright,
@@ -32,38 +24,6 @@ public class NasaObject {
         this.title = title;
         this.url = url;
 
-    }
-
-    public String getCopyright() {
-        return copyright;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public String getExplanation() {
-        return explanation;
-    }
-
-    public String getHDUrl() {
-        return HDUrl;
-    }
-
-    public String getMediaType() {
-        return mediaType;
-    }
-
-    public String getServiceVersion() {
-        return serviceVersion;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getUrl() {
-        return url;
     }
 
     @Override
